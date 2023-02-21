@@ -34,7 +34,7 @@ module.exports = {
         spaceId: `hje3mph6sf1u`,
         accessToken: `P4syamZcjBBdf2_iCkXdhI9E0UWizOoFMX13fedg2W0`
       }
-    }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
