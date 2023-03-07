@@ -25,6 +25,6 @@ export const pageQuery = graphql`
                     html
                 }
             }
-        }  
+        }
     }
     `
