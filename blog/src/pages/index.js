@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { List, ListItem } from "../components/List"
 import * as styles from "../components/index.module.css"
 
 /*const links = [
@@ -72,23 +73,23 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 const IndexPage = ({data}) => (
   <Layout>
     <Seo title="Home" />
-    <ul className={styles.list}>
+    <List width={[1, 2/3, 7/8]} p={2}>
       {
         data.allContentfulBlogPost.edges.map(edge => (
-          <li key={edge.node.id}>
+          <ListItem p={3} key={edge.node.id}>
             <Link to={edge.node.slug}>{edge.node.title}</Link>
             <div>
               <GatsbyImage
-                image={edge.node.heroImage.gatsbyImageData}
-              />
+              image={edge.node.heroImage.gatsbyImageData}/>
             </div>
             <div>
               {edge.node.body.childMarkdownRemark.excerpt}
             </div>
-          </li>
+          </ListItem>
         ))
+
       }
-    </ul>
+    </List>
   </Layout>
 )
 
@@ -113,7 +114,7 @@ export const query = graphql`
           gatsbyImageData (
             layout:CONSTRAINED
             placeholder: BLURRED
-            width: 300
+            width: 600
           )
         }
   			}
